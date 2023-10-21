@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/Bomb5fps.gif">
+    <title>Game Summary</title>
+    <script src="classes.js"></script>
+</head>
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.contentLightMode{
+    color:black;
+    background-color: white;
+    font-size: 6em; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+#endingImage{
+    width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contentC {
+  font-size: 6em; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color:white;
+  background-color: black;
+}
+
+.button {
+            background-color: rgb(64, 177, 3);
+            border-radius: 5px;
+            margin: 5px 5px 5px 5px;
+            z-index: 4;
+        }
+
+#stats {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:10%;
+  width: 10%;
+  font-size: 1em;
+}
+#restart {
+  position: absolute;
+  display: none;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:10%;
+  width: 10%;
+  font-size: 2em;
+}
+
+#restart2 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:10%;
+  width: 10%;
+  font-size: 2em;
+  display:none;
+}
+
+#statsDisplay{
+  font-size: 2.5em; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color:green;
+  background-color: black;
+  display:none;
+  overflow:hidden;
+  font-family:monospace;
+}
+</style>
+
+<body>
+    <div id = "endingImage">
+        <div class = "contentC" id="content"></div>
+        <button class = "button" id="stats" onclick="displayStats();">Click Me to See Your Stats!</button>
+        <button class="button" id="restart" onclick="restart()">Restart</button>
+    </div>
+    <div id = statsDisplay></div>
+    <button class="button" id="restart2" onclick="restart()">Restart</button>
+
+    <script>
+
+
+    /*End of Classes */
+
+    
+        const timeLeft = sessionStorage.getItem('remainingTime');
+        const ending = sessionStorage.getItem('endType');
+        const statsDisplay = document.getElementById('statsDisplay')
+        const totalClicks = sessionStorage.getItem('totalClicks');
+        console.log("total clicks is: "+totalClicks);
+        const endingImage = document.getElementById('endingImage');
+        const content = document.getElementById('content');
+        const wrapper = document.getElementById('wrapper2');
+        const statsButton = document.getElementById('stats');
+        const restartButton = document.getElementById('restart');
+        const numOfTools = sessionStorage.getItem('numOfTools');
+        const restartButton2 = document.getElementById('restart2');
+        const playerHP = sessionStorage.getItem('playerHP');
+        const player = JSON.parse(sessionStorage.getItem('pChar')); //thank god for stackoverflow
+        console.log(player);
+        console.log('playerHP is: ',playerHP);
+        console.log("numOfTools is: ",numOfTools);
+       // const player = JSON.parse(sessionStorage.getItem('pChar')); //so i can recreate it *hours of googling and pain
+        //console.log(player.getAbilityScores()[2].getScore());
+        var lightMode = sessionStorage.getItem('lightMode');
+        console.log("lightmode is: "+lightMode)
+
+        if(lightMode === "true"){
+            content.classList.add('contentLightMode');
+            content.classList.remove('contentC');
+
+
+        }
+        console.log(ending);
+        function displayEnding(){
+        if(ending === "escape"){
+            //document.getElementById('wrapper2').style.backgroundImage = url('')
+            content.innerHTML = "Swinging the crowbar madly, you managed to pry open the door, congratulations you have escaped but... ";
+            setTimeout(function(){displayEndingImage("images/BadEnding.png")},10000);
+        }
+        if(ending === "death"){
+           // content.innerHTML = `Making a valiant last stand with a crook Agent :/ ${player.getFirstName()} after saving the world numerous times before, died at the hands of a petty crook named Bob.`;
+           content.innerHTML = `Making a valiant last stand with a crook Agent  ${player.firstname} after saving the world numerous times before, died at the hands of a petty crook named Bob. At the ripe old age of ${player.age}`;
+           setTimeout(function(){displayEndingImage("images/tombstone.png")},10000);
+        }
+        if(ending === "Code"){
+            content.innerHTML = isSmart();
+            //content.innerHTML = "using your massive brain you defused the bomb.";
+            setTimeout(function(){displayEndingImage("images/GoodEnding.png")},10000);
+        }
+        if(ending === "wirecut"){
+            //content.innerHTML = "Reading the blueprint correctly, you safely cut the wire. Mission accomplished! You leave the building after safely disarming the bomb.";
+            content.innerHTML = isSmart();
+            setTimeout(function(){displayEndingImage("images/GoodEnding.png")},10000);
+        }
+        if(ending=="timeout"){
+            content.innerHTML = `Tik Tok Tik Tok Agent ${player.firstname} was too slow decoding the bomb!`;
+            setTimeout(function(){displayEndingImage("images/explosion.jpg")},10000);
+        }
+
+       
+    
+    }
+
+    function displayEndingImage(imgSrc){
+        console.log("test");
+        content.style.display="none";
+        console.log(imgSrc)
+        endingImage.style.backgroundImage = `url("${imgSrc}")`;
+        statsButton.style.display = 'block';
+        restartButton.style.display = 'block';
+        document.body.style.backgroundColor = 'black';
+    }
+    displayEnding();
+
+    function isSmart(){
+        if(player.int <= 5){
+            return `Somehow agent ${player.firstname} who was widely regarded as one of the less intellectual agents in the organisation figured out how to decode the bomb. Many lives where saved`;
+        }
+        if(player.int >= 5 && player.int <= 15){
+            return `You managed to decode the bomb and save the city!`;
+        }
+        if(player.int > 15){
+            return `Agent ${player.firstName} unsuprisingly due to your pure genius managed to decode the bomb in time, welldone agent!`
+        }
+    }
+    function displayStats(){
+        endingImage.style.display = "none";
+        restartButton2.style.display = "block";
+        statsDisplay.innerHTML += `<p>Agent:${player.lastname} ,${player.firstname} ${player.lastname}</p><br><p>Time Remaining: ${timeLeft} seconds</p><br><p>Total Number of clicks: ${totalClicks} </p></br><p>Remaining Health:${playerHP} </p><br><p>Number of tools used:${numOfTools} </p> `
+        statsDisplay.style.display="block";
+        if(lightMode === "true"){
+            statsDisplay.style.color = "black";
+            statsDisplay.style.backgroundColor = "white";
+        }
+        
+        
+    }
+    function restart(){
+        sessionStorage.setItem("numOfClicks",0);
+        window.location.href = "bombrushmain.html";
+    }
+    
+    </script>
+</body>
+</html>

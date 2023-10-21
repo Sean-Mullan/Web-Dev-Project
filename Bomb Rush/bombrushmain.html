@@ -1,0 +1,3249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///C:/Users/dylan/Downloads/Template_1%20(1).html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dosis:wght@300&display=swap');
+
+        body {
+            background-color: black;
+        }
+
+        .wrapper {
+            background: black;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            border: 10px black solid;
+            display: grid;
+            grid-template-columns: 35% 65%;
+            grid-template-areas:
+                "L R";
+        }
+
+        .lightModeWrapper {
+            background: white;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            border: 10px black solid;
+            display: grid;
+            grid-template-columns: 35% 65%;
+            grid-template-areas:
+                "L R";
+        }
+
+        .left {
+            /*border: 2px solid white;*/
+            display: inline-block;
+            color: rgb(64, 177, 3);
+            grid-area: L;
+            height: 900px;
+        }
+
+        .lightModeLeft {
+            /*border: 2px solid white;*/
+            display: inline-block;
+            color: rgb(64, 177, 3);
+            grid-area: L;
+            height: 900px;
+        }
+
+
+
+        .right {
+            display: grid;
+            /*border: 2px solid white;*/
+            color: rgb(64, 177, 3);
+            grid-area: R;
+        }
+
+
+        .lightModeRight {
+            display: grid;
+            /*border: 2px solid white;*/
+            height: auto;
+            color: rgb(64, 177, 3);
+            grid-area: R;
+        }
+
+        .title {
+            border: 2px solid white;
+            height: fit-content;
+            width: 350px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 50px;
+            text-align: center;
+            font-size: 300%;
+            font-weight: bold;
+            font-style: italic;
+            padding: 5px;
+        }
+
+        .lightModeTitle {
+            border: 2px solid black;
+            height: fit-content;
+            width: 350px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-right: 50px;
+            text-align: center;
+            font-size: 300%;
+            font-weight: bold;
+            font-style: italic;
+            padding: 5px;
+        }
+
+        .player {
+            border: 2px solid white;
+            width: 350px;
+            height: 300px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-right: 50px;
+            padding: 5px;
+        }
+
+        .lightModePlayer {
+            border: 2px solid black;
+            width: 350px;
+            height: 300px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-right: 50px;
+            padding: 5px;
+        }
+
+        .textbox {
+            position: relative;
+            border: 2px solid white;
+            width: 350px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            margin-right: 50px;
+            padding: 5px;
+        }
+
+        .content {
+            position: relative;
+            height: 85%;
+            overflow: auto;
+        }
+
+        .boxFooter {
+            position: absolute;
+            bottom: 2%;
+        }
+
+        .lightModeTextBox {
+            border: 2px solid black;
+            width: 350px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            margin-right: 50px;
+        }
+
+        .gameScreen {
+            border: 2px solid white;
+            float: right;
+            width: 1000px;
+            height: 686px;
+            position: relative;
+        }
+
+
+        .lightModeGameScreen {
+            border: 2px solid black;
+            float: right;
+            width: 1000px;
+            height: 686px;
+            position: relative;
+        }
+
+        .boxes {
+            border-radius: 5px;
+            margin: 3px 3px 3px 3px;
+        }
+
+        .button {
+            background-color: rgb(64, 177, 3);
+            border-radius: 5px;
+            margin: 5px 5px 5px 5px;
+            z-index: 4;
+        }
+
+        .textbox #description {
+            display: block;
+        }
+
+        #start {
+            height: 125px;
+            width: 225px;
+            font-size: 50px;
+        }
+
+        .button-centre {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .gameScreen img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        .lightModeGameScreen img {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        #bombroom {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #saferoom {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #crookroom {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #darkroom {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #timeOutEnding {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #GoodEnding {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #escapeEnding {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #zeroHealthEnding {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        .gameScreen #liftbutton,
+        .lightModeGameScreen #liftbutton {
+            /* this was the error with lightmode so it includes either class now */
+            position: absolute;
+            top: 95%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+
+
+
+        .gameScreen #backtobomb,
+        .lightModeGameScreen #backtobomb {
+            position: absolute;
+            top: 95%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .gameScreen #one,
+        .lightModeGameScreen #one {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .gameScreen #two,
+        .lightModeGameScreen #two {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .gameScreen #three,
+        .lightModeGameScreen #three {
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .gameScreen #bombkeypad,
+        .lightModeGameScreen #bombkeypad {
+            position: absolute;
+            width: 75px;
+            height: 50px;
+            transform: rotate(11deg);
+            top: 64%;
+            left: 74%;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        #bombkeypad:hover {
+            border: 2px solid red;
+        }
+
+        #one:hover {
+            border: 2px solid black;
+        }
+
+        #two:hover {
+            border: 2px solid black;
+
+        }
+
+        #three:hover {
+            border: 2px solid black;
+
+        }
+
+
+
+        #lift {
+            width: 1000px;
+            height: 686px;
+            display: none;
+        }
+
+        #flashlight {
+            position: absolute;
+            top: 80%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 80px;
+            width: 80px;
+        }
+
+        #flashlight:hover {
+            border: 2px solid rgba(244, 235, 235, 0.911);
+        }
+
+        #safecode {
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 70px;
+            width: 70px;
+        }
+
+        #safecode:hover {
+            border: 2px solid rgba(244, 235, 235, 0.911);
+        }
+
+        #blueprint {
+            position: absolute;
+            top: 75%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 90px;
+            width: 90px;
+        }
+
+        #blueprint:hover {
+            border: 2px solid rgba(244, 235, 235, 0.911);
+        }
+
+        #key {
+            position: absolute;
+            top: 69%;
+            left: 11%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 60px;
+            width: 60px;
+        }
+
+        #key:hover {
+            border: 2px solid rgba(244, 235, 235, 0.911);
+        }
+
+        #crowbar {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 80px;
+            width: 80px;
+        }
+
+        #decrypter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: none;
+            display: none;
+            height: 80px;
+            width: 80px;
+        }
+
+        #crowbar:hover {
+            border: 2px solid rgba(244, 235, 235, 0.911);
+        }
+
+        #enemy {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 210px;
+            width: 175px;
+        }
+
+        #enemy:hover {
+            border: 2px solid rgb(201, 49, 49);
+        }
+
+        #wirecutters {
+            position: absolute;
+            top: 70%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 70px;
+            width: 70px;
+        }
+
+        #wirecutters:hover {
+            border: 2px solid white;
+        }
+
+
+
+        .abilityScore {
+            font-size: 1em;
+            float: left;
+            max-width: 30%;
+            border: 2px solid black;
+            text-align: center;
+
+        }
+
+        .upbutton {
+            display: inline-block;
+            overflow: hidden;
+            border: none;
+            background-color: rgb(64, 177, 3);
+            border-radius: 5px;
+        }
+
+        .upbutton:hover {
+            color: red;
+        }
+
+        .downbutton {
+            display: inline-block;
+            overflow: hidden;
+            border: none;
+            background-color: rgb(64, 177, 3);
+            border-radius: 5px;
+        }
+
+        .downbutton:hover {
+            color: red;
+        }
+
+        .num {
+            padding: 5%;
+            border: 0.1em black solid;
+            margin: 10%;
+            text-align: center;
+        }
+
+        .error::after {
+            background-color: rgb(64, 177, 3);
+            color: black;
+            font-size: 20px;
+            width: 350px;
+            padding: 0.25em;
+            content: attr(data-errormsg);
+            /* Sets the content of the error message to the error message i want to display */
+        }
+
+
+
+        .toggle {
+            margin-left: 10px;
+            position: relative;
+            height: 60px;
+            border-radius: 100px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            grid-area: toggle;
+        }
+
+        .toggle::before {
+            content: "";
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background: black;
+            border-radius: 50%;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .toggle.active::before {
+            background-color: rgb(255, 255, 114);
+            left: calc(100% - 50px - 10px);
+        }
+
+        .gameScreen #keyWrapper,
+        .lightModeGameScreen #keyWrapper {
+            position: absolute;
+            top: 5%;
+            left: 30%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            margin: 0;
+        }
+
+        #keyWrapper {
+            margin: 0;
+            width: 35%;
+            height: 70%;
+            display: grid;
+            overflow: auto;
+            margin: 10%;
+            grid-template-columns: 100%;
+            grid-template-areas:
+                "Screen"
+                "keyPad"
+                "submit";
+        }
+
+        .keyPad {
+            /* background-color: rgb(246, 23, 23); */
+            background-image: linear-gradient(60deg, darkred, red);
+            grid-area: keyPad;
+            height: 106%;
+        }
+
+        .keyPadNum {
+            float: left;
+            color: white;
+            padding: 5%;
+            margin: 5%;
+            list-style-type: none;
+            border: 0.2em black solid;
+            border-radius: 100%;
+            background-color: grey;
+            box-shadow: 0 0.5em black;
+            font-size: 15px;
+            width: 10%;
+            text-align: center;
+
+        }
+
+        .keyPadNum:hover {
+            background-color: lightgrey;
+        }
+
+        .keyPadNum:active {
+            background-color: lightgrey;
+            box-shadow: 0 0.2em black;
+            transform: translateY(0.15em);
+        }
+
+        #zero {
+            float: center;
+            margin-left: 37%;
+            margin-right: 35%;
+            margin-bottom: 18%;
+        }
+
+        #Screen {
+            display: block;
+            height: 1em;
+            background-image: linear-gradient(60deg, black, rgb(38, 35, 35));
+            color: white;
+            font-size: 3em;
+            grid-area: Screen;
+            padding: 5% 10% 5% 10%;
+        }
+
+        #submitPad {
+            grid-area: submit;
+            color: white;
+            padding: 5%;
+            margin-left: 42%;
+            margin-top: 25%;
+            list-style-type: none;
+            border: 0.2em black solid;
+            border-radius: 100%;
+            background-color: grey;
+            box-shadow: 0 0.5em black;
+            font-size: 15px;
+            overflow: auto;
+        }
+
+        #submitPad:hover {
+            background-color: lightgrey;
+        }
+
+        #submitPad:active {
+            background-color: lightgrey;
+            box-shadow: 0 0.2em black;
+            transform: translateY(0.15em);
+        }
+
+        .gameScreen #closepad,
+        .lightModeGameScreen #closepad {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        #closepad:hover {
+            border: solid 2px black;
+        }
+
+        .gameScreen #cutwire,
+        .lightModeGameScreen #cutwire {
+            position: absolute;
+            top: 83%;
+            left: 49%;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        #cutwire:hover {
+            border: solid 2px black;
+        }
+
+        .gameScreen #restart,
+        .lightModeGameScreen #restart {
+            position: absolute;
+            top: 95%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #restart:hover {
+            border: solid 2px black;
+        }
+
+        /*line 700 */
+        .gameScreen #escapedoor,
+        .lightModeGameScreen #escapedoor {
+            position: absolute;
+            top: 35%;
+            left: 76%;
+            height: 0.5em;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            height: 100px;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        #toolDisplay {
+            display: grid;
+            position: relative;
+            width: 20%;
+            /* Set the width of the parent container */
+            height: 50%;
+            top: 60%;
+            right: -80%;
+            /* Set the height of the parent container */
+            overflow: hidden;
+            grid-area: T;
+        }
+
+        #toolDisplay img {
+            position: absolute;
+            width: auto;
+            /* Allow the width to be flexible */
+            height: auto;
+            /* Allow the height to be flexible */
+            max-width: 100%;
+            /* Set the maximum width of the image to the width of the parent */
+            max-height: 100%;
+            /* Set the maximum height of the image to the height of the parent */
+            top: 50%;
+            /* Position the image to the center of the parent vertically */
+            left: 50%;
+            /* Position the image to the center of the parent horizontally */
+            transform: translate(-50%, -50%);
+            /* Translate the image back by half of its dimensions */
+
+        }
+
+
+
+
+        #escapedoor:hover {
+            border: solid 6px white;
+        }
+
+        .gameScreen #safedoor,
+        .lightModeGameScreen #safedoor {
+            position: absolute;
+            top: 58%;
+            left: 49%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            height: 135px;
+            width: 108px;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        #safedoor:hover {
+            border: solid 2px black;
+        }
+
+        #blackLayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2;
+            display: none;
+            pointer-events: none;
+        }
+
+        .flashlightEffect {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.95);
+            background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.95) 5%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #flashlightButton {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 3;
+            display: none;
+        }
+
+
+
+        .inventory-wrapper {
+            height: 250px;
+            width: 600px;
+            padding: 0;
+            border-style: solid;
+            border-color: black;
+            border-radius: 20px;
+            contain: content;
+            background-color: white;
+            position: relative;
+            top: 700px;
+            grid-area: I;
+        }
+
+        .inventory-header {
+            grid-area: header;
+            height: 10%;
+        }
+
+        .inventory-header>h1 {
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+            margin: 5px 0px 0px 15px;
+        }
+
+        .inventory-contents {
+            border: solid;
+            border-color: rgb(0, 0, 0);
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 0;
+            width: 100%;
+            height: 87%;
+            margin: 0;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .item1 {
+            grid-area: item1;
+        }
+
+        .item2 {
+            grid-area: item2;
+        }
+
+        .item3 {
+            grid-area: item3;
+        }
+
+        .item4 {
+            grid-area: item4;
+        }
+
+        .item5 {
+            grid-area: item5;
+        }
+
+        .item6 {
+            grid-area: item6;
+        }
+
+        .item7 {
+            grid-area: item7;
+        }
+
+        .item8 {
+            grid-area: item8;
+        }
+
+        .item9 {
+            grid-area: item9;
+        }
+
+        .item10 {
+            grid-area: item10;
+        }
+
+        .items-container {
+            display: grid;
+            grid-template-columns: 20%;
+            grid-template-rows: 50%;
+            grid-template-areas:
+                'item1 item2 item3 item4 item5'
+                'item6 item7 item8 item9 item10';
+            height: 100%;
+            width: 100%;
+            margin: 0 0 0 2px;
+        }
+
+        .items-container>div {
+            border: solid;
+            border-color: black;
+            border-radius: 5px;
+            margin: 5px 5px 5px 5px;
+            contain: content;
+            width: 100px;
+            height: 90px;
+            background: radial-gradient(transparent, rgba(0, 0, 0, 0.50));
+
+        }
+
+        .item>img {
+            width: 100%;
+        }
+
+
+        #enemyHealthBar {
+            width: 100%;
+            height: 20px;
+            background-color: #a90000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #enemyHealthBar>p {
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            margin: 0 0 0 10px;
+        }
+
+        #enemyHealth {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            transition: width 0.2s ease-in-out;
+        }
+
+        #playerHealthWrapper {
+            position: absolute;
+            width: 100%;
+        }
+
+        #playerHealthBar {
+            width: 100%;
+            height: 20px;
+            background-color: #a90000;
+            overflow: hidden;
+        }
+
+        #playerHealthBar>p {
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            margin: 0 0 0 10px;
+        }
+
+        #playerHealth {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            transition: width 0.2s ease-in-out;
+        }
+
+        #inscription {
+            display: none;
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            width: 40%;
+            height: 10%;
+        }
+
+        #playerFullName {
+            color: rgb(125, 125, 125);
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #playerBirthDeathYear {
+            color: rgb(125, 125, 125);
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #encryptedNote {
+            font-family: 'Delicious Handwritten', 'fantasy';
+            background: url('note.jpg');
+            position: absolute;
+            top: 70%;
+            right: 5%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 80px;
+            width: 80px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .noteContainer {
+            width: 100%;
+            height: 100%;
+            font-size: 1.5em;
+            color: black;
+            background-image: url("images/note.jpg");
+        }
+
+        .noteContainer p {
+            margin: 1%;
+        }
+
+
+        #bombTimerWrapper {
+            position: relative;
+            /* width: 350px;
+            margin-left: 10px; */
+            height: auto;
+            display: block;
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 2% 2% 2% 2%;
+            font-family: monospace;
+            grid-area: timer;
+        }
+
+        #bombTimerWrapper>p {
+            margin: 0;
+        }
+
+        #clock {
+            /* margin: 5px 5px 5px 5px; */
+            padding: 5% 5%;
+            background-image: linear-gradient(to bottom right, green, rgb(64, 177, 3));
+            font-weight: 900;
+            color: black;
+        }
+
+        #timerToggleWrapper {
+            width: 350px;
+            margin-left: 10px;
+            display: grid;
+            position: relative;
+            grid-template-columns: 60% 40%;
+            grid-template-areas: 
+            'timer toggle';
+        }
+
+        @media screen and (max-width: 1420px) {
+
+            .right,
+            .gameScreen,
+            .lightModeRight,
+            .lightModeGameScreen,
+            #bombroom,
+            #saferoom,
+            #crookroom,
+            #darkroom,
+            #lift,
+            #GoodEnding,
+            #escapeEnding,
+            #zeroHealthEnding,
+            #timeOutEnding {
+                width: 800px;
+                height: 549px;
+            }
+
+            #backtobomb.button {
+                left: 7%;
+            }
+
+            #liftbutton.button {
+                left: 7%;
+            }
+
+            .inventory-wrapper {
+                top: 560px;
+            }
+
+            #wrapper1 {
+                border-bottom: none;
+            }
+        }
+
+        @media screen and (max-width: 1220px) {
+
+            .right,
+            .gameScreen,
+            .lightModeRight,
+            .lightModeGameScreen,
+            #bombroom,
+            #saferoom,
+            #crookroom,
+            #darkroom,
+            #lift,
+            #GoodEnding,
+            #escapeEnding,
+            #zeroHealthEnding,
+            #timeOutEnding {
+                width: 600px;
+                height: 412px;
+            }
+
+            #backtobomb.button {
+                top: 92%;
+                left: 9%;
+            }
+
+            #liftbutton.button {
+                top: 92%;
+                left: 7%;
+            }
+
+            .inventory-wrapper {
+                top: 422px;
+            }
+
+            #one.button {
+                top: 40%;
+            }
+
+            #two.button {
+                top: 50%;
+            }
+
+            #three.button {
+                top: 60%;
+            }
+
+            #toolDisplay {
+                top: 110%;
+                width: 40%;
+            }
+
+        }
+
+        @media screen and (max-width: 1120px) {
+
+            .title,
+            .lightModeTitle,
+            .player,
+            .lightModePlayer,
+            #timerToggleWrapper{
+                width: 80%;
+                height: auto;
+            }
+            .textbox,.lightModeTextBox{
+                width:80%;
+            }
+
+        }
+        @media screen and (max-width: 700px) 
+        {
+            .wrapper, .lightModeWrapper{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-areas:
+                "L L"
+                "R R"
+                "I T";
+            }
+        }
+    </style>
+
+</head>
+
+<body id="body">
+
+    <div class="wrapper" id="wrapper1">
+        <div class="left">
+
+            <div class="title">
+                BOMB RUSH
+            </div>
+            <div id="timerToggleWrapper">
+                <div id="bombTimerWrapper">
+                    <p>Bomb Timer:</p>
+                    <div id="clock">05:00</div>
+                </div>
+                <div class="functionality">
+                    <div class="toggle"></div>
+                </div>
+            </div>
+            <div class="player">
+                <form onsubmit="event.preventDefault();">
+                        <label for="firstName">First Name:</label>
+                        <input class="boxes" type="text" id="firstName" name="firstName" autocomplete="off"><br>
+    
+                        <label for="lastName">Last Name:</label>
+                        <input class="boxes" type="text" id="lastName" name="lastName" autocomplete="off"><br>
+    
+                        <label for="age">Age:</label>
+                        <input class="boxes" type="number" id="age" name="age" autocomplete="off"><br>
+    
+                        <button class="button" onclick="generateCharacter();">Generate Character</button>
+    
+                        <div>
+                            Available Points
+                        </div>
+                        <div id="remaining">
+                            20
+                        </div>
+                        <div class="abilityScore" data-errormsg="">
+    
+                            <button class="upbutton"> <span class="material-symbols-outlined">Increase</span> </button><br>
+                            <div class="num">0</div>
+                            Power<br>
+                            <button class="downbutton"> <span class="material-symbols-outlined">Decrease</span> </button>
+                        </div>
+                        <div class="abilityScore" data-errormsg="">
+                            <button class="upbutton"> <span class="material-symbols-outlined">Increase</span> </button><br>
+                            <div class="num">0</div>
+                            Health<br>
+                            <button class="downbutton"> <span class="material-symbols-outlined">Decrease</span> </button>
+                        </div>
+                        <div class="abilityScore" data-errormsg="">
+                            <button class="upbutton"> <span class="material-symbols-outlined">Increase</span> </button><br>
+                            <div class="num">0</div>
+                            Smarts<br>
+                            <button class="downbutton"> <span class="material-symbols-outlined">Decrease</span> </button>
+                        </div>
+                        <br><br><br><br><br><br>
+                    <input class="button" type="submit" value="Submit" id="characterSubmit"
+                    onclick="inputName();inputBirthDeathYear();">
+            </form>
+        </div>
+
+            <div class="textbox" id="textbox">
+                <div class="content">
+                    <p id="description">Text will go here, please input your name and have fun!</p>
+                </div>
+                <div class="boxFooter">
+                    <button class="button" onclick="decreaseFontSize()">Decrease Font Size</button>
+                    <button class="button" onclick="increaseFontSize()">Increase Font Size</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div class="gameScreen">
+                <div class="button-centre">
+                    <button class="button" id="start" onclick="startCheck()">START</button>
+                    <img id="bombroom" src="images/BombRoom.png" alt="BombRoom">
+                    <button class="button" id="liftbutton" onclick="lift()">To Lift</button>
+                    <img id="lift" src="images/LiftRoom.png" alt="liftroom">
+                    <button class="button" id="backtobomb" onclick="bombRoom()">To Bomb</button>
+                    <button class="button" id="one" onclick="firstFloor()">1</button>
+                    <button class="button" id="two" onclick="secondFloor()">2</button>
+                    <button class="button" id="three" onclick="thirdFloor()">3</button>
+                    <img id="saferoom" src="images/SafeRoom.png" alt="safe room">
+                    <img id="crookroom" src="images/CrookRoom_Empty.png" alt="crook room">
+                    <img id="darkroom" src="images/DarkRoom.png" alt="dark room">
+
+                    <button id="flashlight" onclick="flashlightFound()">
+                        <img id="flashlightimage" src="images/flashlight.png" alt="flashlight">
+                    </button>
+                    <div id="blackLayer"></div>
+                    <div id="flashlightLayer"></div>
+                    <button type="button" id="flashlightButton" onclick="toggleFlashlight()">Flashlight Status:<span
+                            id="flashlightStatus"> Off</span></button>
+
+                    <button id="safecode" onclick="safecodeFound()">
+                        <img id="safecodeimage" src="images/barcode.jpg" alt="CodeinSafe">
+                    </button>
+                    <button id="blueprint" onclick="blueprintFound()">
+                        <img id="blueprintimage" src="images/blueprint.jpg" alt="blueprint">
+                    </button>
+                    <button id="key" onclick="keyFound()">
+                        <img id="keyimage" src="images/key.png" alt="key">
+                    </button>
+                    <button id="crowbar" onclick="crowbarFound()">
+                        <img id="crowbarimage" src="images/crowbar.png" alt="crowbar">
+                    </button>
+                    <button id="encryptedNote" onclick="encryptedNoteFound();">
+                        <img src="images/note.jpg" id="noteimage" alt="Picture of encrypted note">
+                    </button>
+
+                    <button id="decrypter" onclick="decrypterFound();">
+                        <img src="images/decrypter.jpg">;
+                    </button>
+
+                    <!-- <button id="enemy" onclick="attack()">
+                        <img src="images/burgler.png" alt="enemy">
+                    </button> -->
+
+                    <div id="enemy" onclick="attack()">
+                        <div id="enemyHealthBar">
+                            <div id="enemyHealth"></div>
+                            <p>EnemyHP: <span id="enemyHP"></span></p>
+                        </div>
+                        <img id="burglar" src="images/burgler.png">
+                    </div>
+
+                    <img id="zeroHealthEnding" src="images/tombstone.png" alt="tombstone">
+                    <div id="inscription">
+                        <div id="playerFullName"></div>
+                        <div id="playerBirthDeathYear"></div>
+                    </div>
+
+
+                    <button id="wirecutters" onclick="wirecuttersFound()">
+                        <img id="wirecuttersimage" src="images/pliars.png" alt="wire cutters">
+                    </button>
+                    <button id="bombkeypad" onclick="openKeyPad()">
+                        <img id="bombkeypadimage" src="images/bombKeyPad.png" alt="bomb key pad">
+                    </button>
+                    <button class="button" id="closepad" onclick="closeKeyPad()">
+                        Close
+                    </button>
+                    <button class="button" id="cutwire" onclick="cutwire()">
+                        Cut Wire
+                    </button>
+                    <img id="GoodEnding" src="images/GoodEnding.png" alt="good ending">
+                    <img id="timeOutEnding" src="images/BadEnding.jpg" alt="timeout ending">
+                    <button class="button" id="restart" onclick="restart()">
+                        Restart
+                    </button>
+                    <button id="escapedoor" onclick="escape()">
+                        <img id="escapedoorimage" src="images/escapedoor.png" alt="escape door"></button>
+                    <img id="escapeEnding" src="images/BadEnding.png" alt="bad ending">
+                    <img id="safedoor" onclick="opensafe()" src="images/safedoor.png" alt="safe door">
+                    <div id="keyWrapper">
+                        <div class="keyPad">
+                            <div>
+                                <div id="Screen"></div>
+                            </div>
+                            <ul>
+                                <li class="keyPadNum">1</li>
+                                <li class="keyPadNum">2<br><sub>abc</sub></li>
+                                <li class="keyPadNum">3<br><sub>def</sub></li>
+                                <li class="keyPadNum">4<br><sub>ghi</sub></li>
+                                <li class="keyPadNum">5<br><sub>jkl</sub></li>
+                                <li class="keyPadNum">6<br><sub>mno</sub></li>
+                                <li class="keyPadNum">7<br><sub>pqrs</sub></li>
+                                <li class="keyPadNum">8<br><sub>tuv</sub></li>
+                                <li class="keyPadNum">9<br><sub>wxyz</sub></li>
+                                <li class="keyPadNum" id="zero">0</li>
+                            </ul>
+                            <span id="submitPad">Submit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="playerHealthWrapper">
+                    <div id="playerHealthBar">
+                        <div id="playerHealth"></div>
+                        <p>PlayerHP: <span id="playerHP"></span></p>
+                    </div>
+                </div>
+
+                <div class="inventory-wrapper">
+                    <div class="inventory-header">
+                        <h1>Inventory</h1>
+                    </div>
+                    <div class="inventory-contents">
+                        <div class="items-container">
+                            <div class="item1">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item2">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item3">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item4">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item5">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item6">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item7">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item8">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item9">
+                                <div class="item"></div>
+                            </div>
+                            <div class="item10">
+                                <div class="item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="toolDisplay"></div>
+            </div>
+
+        </div>
+
+        <audio id="audio" src="audio/crafty-crime.mp3" controls loop autoplay style="display:none">
+            Your browser does not support the audio element.
+        </audio>
+</body>
+
+<script>
+  //  var allElements = document.body.getElementsByTagName("*"); ends up counting the same click twice so just ended up using body
+ //   sessionStorage.setItem('totalClicks',0);
+
+    sessionStorage.setItem('totalClicks',0);
+    var gameFinished = false;
+    var decrypter_Found = false;
+    let playerName = "Tempo";
+    let playerBirthDeathYear = "Tempo";
+    var totalCount = 0;
+
+
+    function inputName() {
+        let firstName = document.getElementById("firstName").value;
+        let lastName = document.getElementById("lastName").value;
+        playerName = firstName + " " + lastName;
+    }
+
+    function inputBirthDeathYear() {
+        let age = document.getElementById("age").value;
+        let currentYear = new Date().getFullYear();
+        let birthYear = currentYear - age;
+
+        playerBirthDeathYear = birthYear + " - " + currentYear;
+    }
+
+    sessionStorage.setItem("lightMode", false);
+    //Error here for some reason if statement doesnt work on session variable, any help would be appreciated!!!
+    var toggle = document.querySelector(".toggle");
+    toggle.addEventListener('click', function () {
+        toggle.classList.toggle('active');
+        var lm = sessionStorage.getItem('lightMode');
+        if (lm === "true") {
+            switchToDarkMode();
+            sessionStorage.setItem("lightMode", false);
+        }
+        else {
+            switchToLightMode();
+            sessionStorage.setItem("lightMode", true);
+        }
+    });
+
+    class playerCharacter {
+        constructor(firstNameInput, lastNameInput, ageInput, abilityScores) {
+            this._firstNameInput = firstNameInput;
+            this._lastNameInput = lastNameInput;
+            this._ageInput = ageInput;
+            this.abilityScoreList = abilityScores;
+        }
+        getFirstName() {
+            return this._firstNameInput;
+
+        }
+
+        getLastName() {
+            return this._lastNameInput;
+        }
+
+        getAgeInput() {
+            return this._ageInput;
+        }
+
+        setAbilityScores(newAbilityScore) {
+            this.abilityScoreList = newAbilityScore
+        }
+
+
+        toDict() {
+            return {firstname: this._firstNameInput,lastname:this._lastNameInput,age:this._ageInput,str:this.abilityScoreList.getScore(0),con:this.abilityScoreList.getScore(1),int:this.abilityScoreList.getScore(2)};
+        }
+
+    }
+
+    function startAudio() {
+        document.getElementById("audio").play();
+    }
+
+    function stopAudio() {
+        document.getElementById("audio").pause();
+    }
+
+    const head = document.head;
+    const tags = head.getElementsByTagName('style');
+    const classRegex = /\.[a-zA-Z0-9_-]+/g;
+
+    function switchToLightMode() {
+
+        for (let i = 0; i < tags.length; i++) {
+            var tag = tags[i];
+            var cssRules = tag.innerHTML;
+
+            // Extract class names using regular expressions
+            let matches = cssRules.match(classRegex);
+
+            // Print all the class names
+            for (let j = 0; j < matches.length; j++) {
+                if (matches[j].substring(1).includes('lightMode')) {
+                    // substring just removes the .
+                    console.log(matches[j]);
+                    newClassName = matches[j].substring(1);
+                    oldstr = newClassName.substring(9); //removes the lightmode
+                    firstLetter = oldstr[0];
+                    oldClassName = firstLetter.toLowerCase() + oldstr.substring(1);
+                    replaceClass(oldClassName, newClassName);
+                    console.log('newClass Name: ', newClassName, 'old class name: ', oldClassName);
+                    document.getElementById("body").style.backgroundColor = "White"
+                    document.getElementById("textbox").style.borderColor = "Black"
+                };
+            }
+        }
+
+    }
+
+
+    function switchToDarkMode() {
+
+
+        for (let i = 0; i < tags.length; i++) {
+            var tag = tags[i];
+            var cssRules = tag.innerHTML;
+
+            // Extract class names using regular expressions
+            let matches = cssRules.match(classRegex);
+
+            // Print all the class names
+            for (let j = 0; j < matches.length; j++) {
+                if (matches[j].substring(1).includes('lightMode')) { // substring just removes the .
+                    newClassName = matches[j].substring(1);
+                    oldstr = newClassName.substring(9); //removes the lightmode
+                    firstLetter = oldstr[0];
+                    oldClassName = firstLetter.toLowerCase() + oldstr.substring(1);
+                    replaceClass(newClassName, oldClassName);
+                    //  console.log('newClass Name: ',newClassName,'old class name: ',oldClassName);
+                    document.getElementById("body").style.backgroundColor = "Black"
+                    document.getElementById("textbox").style.borderColor = "White"
+                };
+            }
+        }
+
+        //getelementbyclassname("name").value = color white
+    }
+
+
+    function replaceClass(origClass, newClass) {
+        console.log(origClass);
+        elements = document.getElementsByClassName(origClass);
+        console.log("testsada")
+        console.log(elements.length);
+        for (var i = 0; i < elements.length; i++) {
+            console.log(elements[i]);
+            console.log("erfewf")
+            elements[i].classList.add(newClass);
+            elements[i].classList.remove(origClass);
+        }
+
+    }
+
+    function validate() {
+        let valid = true;
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const age = document.getElementById("age").value;
+
+        const firstNameRegex = /^[a-zA-Z]{1,20}$/;
+        const lastNameRegex = /^[a-zA-Z]{1,20}$/;
+
+        if (firstName === "" || !firstNameRegex.test(firstName)) {
+            valid = false;
+            gameText.innerText = "Please enter a valid first name (up to 20 letters).";
+        }
+
+        if (lastName === "" || !lastNameRegex.test(lastName)) {
+            valid = false;
+            gameText.innerText = "Please enter a valid last name (up to 20 letters).";
+        }
+
+        if (firstName === "" || lastName === "" || age === "") {
+            valid = false;
+            gameText.innerText = "Please fill in all required fields before submitting.";
+        }
+
+        if (firstName.length > 20) {
+            gameText.innerText = "Your first name must be under 20 letters";
+        }
+
+        let totalPoints = 0;
+        const abilityScores = document.querySelectorAll('.abilityScore');
+        for (let i = 0; i < abilityScores.length; i++) {
+            const score = parseInt(abilityScores[i].querySelector('.num').textContent);
+            totalPoints += score;
+        }
+
+        if (totalPoints === 0) {
+            valid = false;
+            gameText.innerText = "Please allocate points to your Power, Health and Smarts.";
+        }
+
+        return valid;
+
+    }
+
+    function startCheck() {
+        if (submitted == true) {
+            startAudio(); bombRoom(); startTimer('wrapper1', 300000);
+            document.getElementById('body').addEventListener('click',countTotalClicks);
+        } else if (submitted == false) {
+            gameText.innerText = "You need to enter the correct details and press submit to begin the game.";
+        }
+
+    }
+
+
+
+
+    function generateCharacter() {
+        if (!submitted) { //ammendment so it wont trigger if alredy submitted
+            fetch('http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/characterGenerator.php?number=1110')
+                .then(response => response.json())
+                .then(data => {
+                    const firstNameInput = document.getElementById('firstName');
+                    const lastNameInput = document.getElementById('lastName');
+                    const ageInput = document.getElementById('age');
+
+                    firstNameInput.value = data.FirstName;
+                    lastNameInput.value = data.LastName;
+                    ageInput.value = data.Age;
+                })
+                .catch(error => console.error(error));
+        }
+    }
+
+    function bombRoom() {
+        document.getElementById("bombroom").style.display = 'block';
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+
+    }
+
+    function lift() {
+        document.getElementById("bombroom").style.display = 'none';
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'none';
+        document.getElementById("lift").style.display = 'block';
+        document.getElementById("backtobomb").style.display = 'block';
+
+    }
+
+
+
+
+
+    const abilityScores = {
+        str: "Strength",
+        con: "Constitution",
+        int: "Intelligence"
+    }
+
+    class abilityScore {
+        constructor(score, type) {
+            try {
+                this.setScore(parseInt(score));
+                this.setType(type);
+            }
+            catch (e) {
+                console.log(e);
+                throw new Error('Could not create instance, ensure params are correct');
+            }
+        }
+
+        setScore(score) {
+            if (score => 0 && score < 21) {
+                this._score = score;
+            }
+
+        }
+
+        setType(types) {
+            if (types === 'str') {
+                this._type = abilityScores.str;
+                console.log('test');
+            }
+            if (types === 'con') {
+                this._type = abilityScores.con;
+                console.log('test1')
+            }
+            if (types === 'int') {
+                this._type = abilityScores.int;
+                console.log('test2')
+            }
+            else {
+                if (types !== 'int' && types !== 'con' && types !== 'str') {
+                    console.log("tpy is: ", types);
+                    throw new Error("Invalid Type!")
+                }
+            }
+        }
+
+        getScore() {
+            return parseInt(this._score);
+        }
+
+        getType() {
+            return this._type;
+        }
+
+        toString(){
+            return this._type + this._score;
+        }
+
+
+    }
+
+
+    class CharacterScores {
+        constructor(strScore, intScore, conScore, scoreTotal) {
+            try {
+                this.setScoreTotal(scoreTotal);
+                this.setScores(strScore, intScore, conScore);
+            }
+            catch (error) {
+                console.log(error);
+                throw new Error("Couldnt Create Instance")
+            }
+        }
+
+        setScoreTotal(scoreTotal) {
+            if (scoreTotal > 0) {
+                this.scoreTotal = scoreTotal;
+            }
+        }
+
+        setScores(strScore, intScore, conScore) {
+            var scoreVals = [];
+            //  if((strScore.getScore() + intScore.getScore() + conScore.getScore()) === this.scoreTotal){
+            scoreVals.push(strScore);
+            scoreVals.push(intScore);
+            scoreVals.push(conScore);
+            this.scoreVals = scoreVals;
+        }
+        /*  else{
+              throw new Error("Scores Dont Add Up") //add a catch when doing this which doesnt allow user to proceed with start.
+          } */
+
+
+
+        getScore(index) {
+            return this.scoreVals[index].getScore();
+        }
+
+        returnScoreVals() {
+            var rstr = "";
+            for (i = 0; i < this.scoreVals.length; i++) {
+                rstr += (this.scoreVals[i].getScore() + this.scoreVals[i].getType());
+
+            }
+
+            return rstr;
+        }
+
+        toString() {
+            console.log("Scores are: "+this.returnScoreVals())
+            return this.returnScoreVals();
+        }
+    }
+
+    var submitted = false;
+    const scores = document.getElementsByClassName('num');
+    console.log(scores);
+    const upclick = document.getElementsByClassName('upbutton');
+    const downclick = document.getElementsByClassName('downbutton');
+
+    function checkTotal() {
+        totalScore = 0
+        for (i = 0; i < scores.length; i++) {
+
+            totalScore += parseInt(scores[i].innerHTML);
+
+
+        }
+        return totalScore
+    }
+
+    function getRemaining(score) {
+        totalScore = checkTotal();
+        console.log("Total score is: ", totalScore);
+        remaining = score - totalScore;
+        if (remaining < 0) {
+            return [-1, false]; //-1 to indicate its not acceptable value
+        }
+
+        if (remaining == 0) {
+            return [remaining, true];
+        }
+
+        if (remaining > 0) {
+            return [remaining, false];
+        }
+
+
+
+    }
+
+    function verify(element, score) {
+        var remaining = getRemaining(score);
+        console.log(remaining[0], ' left');
+        document.getElementById('remaining').innerHTML = remaining[0];
+        if (remaining[1] == true) {
+            return true;
+        }
+
+        else {
+            if (remaining[0] == -1) {
+                element.parentElement.classList.add('error');
+                element.parentElement.setAttribute('data-errormsg', 'Max Points');
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+
+    }
+    function incrementASI(i) {
+        if (!submitted) {
+            if (verify(scores[i], 19)) {
+                console.log("I is ", i)
+                console.log(scores[i]);
+                var val = parseInt(scores[i].innerHTML);
+                console.log(val);
+                if (val != 20) {
+                    val++;
+                    scores[i].innerHTML = val;
+
+
+                }
+            }
+        }
+    }
+    function decrementASI(i) {
+        if (!submitted) {
+            element = scores[i];
+            verify(element, 19)
+            element.parentElement.classList.remove('error');
+            element.parentElement.setAttribute('data-errormsg', '');
+            var val = parseInt(scores[i].innerHTML);
+            if (val != 0) {
+                val--;
+                scores[i].innerHTML = val;
+
+            }
+        }
+    }
+    // }
+
+    function addListeners(nodeList, funct) {
+        for (let i = 0; i < nodeList.length; i++) {
+            console.log("nl" + nodeList[i]);
+            nodeList[i].addEventListener('click', function () { funct(i) });
+        }
+    }
+
+    function getScores() {
+        var score = []
+        for (i = 0; i < scores.length; i++) {
+            var scoreVal = parseInt(scores[i].innerHTML)
+            score.push(scoreVal); //adds each value to an array.
+        }
+        return score;
+    }
+
+    function getAbilities() {
+        scoreList = getScores();
+        strScore = new abilityScore(scoreList[0], 'str');
+        conScore = new abilityScore(scoreList[1], 'con');
+        intScore = new abilityScore(scoreList[2], 'int');
+
+        charScores = new CharacterScores(strScore, intScore, conScore);
+        let playerMaxHP = 100;
+        let enemyMaxHP = 100;
+        let enemyHP = enemyMaxHP;
+        let playerHP = playerMaxHP;
+        sessionStorage.setItem('playerHP',playerHP);
+        return charScores;
+
+
+
+    }
+
+    document.getElementById('characterSubmit').addEventListener('click', function () {
+        if (validate()) {
+
+            const firstNameInput = document.getElementById('firstName').value;
+            const lastNameInput = document.getElementById('lastName').value;
+            const ageInput = document.getElementById('age').value;
+            const abilities = getAbilities();
+            console.log("Abilities: " + abilities.toString());
+            var playerChar = new playerCharacter(firstNameInput, lastNameInput, ageInput, abilities);
+            console.log("player character to arr is: ",playerChar.toDict())
+            sessionStorage.setItem("pChar", JSON.stringify(playerChar.toDict()));
+            submitted = true;
+
+
+        }
+    })
+
+
+    class tool {
+        constructor(toolname, imgurl, inventoryNum) {
+
+            this._toolname = toolname;
+            this._imgurl = imgurl;
+            this._divElement = document.getElementById('toolDisplay'); //for when clicked in on inventory pops up
+            this.setInventoryDiv(inventoryNum + 1);
+        }
+
+        setInventoryDiv(inventoryNum) {
+            console.log("test inv num" + inventoryNum);
+            var inventoryDiv = 'item' + parseInt(inventoryNum)
+            const inventoryRegex = /item[0-9]/;
+            console.log("Inventory Didv: " + inventoryDiv);
+
+            if (inventoryDiv === null) {
+                this._inventoryDiv = "n";
+            }
+            else {
+                console.log("Regex test result: " + inventoryDiv.match(inventoryRegex));
+                if (inventoryDiv.match(inventoryRegex)) {
+                    this._inventoryDiv = inventoryDiv;
+                }
+                else {
+                    this._inventoryDiv = "n";
+                }
+            }
+
+        }
+
+        getToolName() {
+            return this._toolname;
+        }
+
+        getUrl() {
+            return this._imgurl;
+        }
+
+        display() {
+            this._divElement.innerHTML = '<img src=' + this._imgurl + ' alt="An image of + ' + this._toolname + 'class = "tool" ">'
+        }
+
+        addToInventoryDisplay() {
+            if (this._inventoryDiv != "n") {
+                console.log("Div is: " + this._inventoryDiv);
+                var div = document.getElementsByClassName(this._inventoryDiv)[0];
+                console.log(div);
+                div.innerHTML = '<div class = "item"><img src=' + this._imgurl + ' alt="An image of + ' + this._toolname + ' "></div>';
+                console.log(div.innerHTML);
+            }
+            else {
+                console.log("invalid Div entered");
+            }
+        }
+        toString() {
+            return this._toolname + this._imgurl
+        }
+
+        hide() {
+            this._divElement.innerHTML = '';
+        }
+    }
+
+    class encryptionNote extends tool {
+        constructor(toolname, imgurl, inventoryNum, messageContents) {
+            super(toolname, imgurl, inventoryNum);
+            this.setMessageContents(messageContents);
+            this.decrypterFound = false;
+        }
+
+        display() {
+            // this._divElement.innerHTML =  '<div class="noteContainer"> <img id="noteimage"src='+this.imgurl +' alt="' + this.toolName + 'image' +'> <p id ="theMessage" class="centered">'+this.messageConents+' </p> </div>';
+            this._divElement.innerHTML = '<div class = "noteContainer"><p id ="theMessage" class="centered">' + this.messageContents + ' </p></div>';
+        }
+
+
+
+        setMessageContents(contents) {
+            if (contents !== undefined) {
+                this.messageContents = contents;
+            }
+            else {
+                this.messageContents = "empty";
+            }
+        }
+        decrypterFoundUpdate(decryptedMessage) {
+            this.decrypterFound = true;
+            this.setMessageContents(decryptedMessage);
+        }
+
+        getMessage() {
+            return this.messageContents;
+        }
+    }
+
+
+    class toolBox {
+
+        constructor(collectionName, collection) { //collection will be an empty array but eventually will contain instances of tool objects
+            this._collectionName = collectionName;
+            try {
+                // this._container = this.setContainer(container);
+                this._collection = []
+                this.initialiseCollection(collection);
+            }
+            catch (e) {
+                console.log(e);
+            }
+
+        }
+        /* constructor(collectionName,container){ //collection will be an empty array but eventually will contain instances of tool objects
+             this._collectionName = collectionName;
+             this._collection = [];
+             try{
+             this._container = this.setContainer(container);
+             }
+             catch(e){
+                 console.log(e);
+             }
+             
+         } */
+
+        initialiseCollection(collection) {
+            for (var i = 0; i < collection.length; i++) {
+                if (collection[i] instanceof tool) {
+                    this._collection.push(collection[i]);
+                }
+            }
+        }
+
+        addTool(tool) {
+            this._collection.push(tool);
+            //add some error checking here
+            this.displayToolInvLatest();
+        }
+
+        removeTool(toolName) {
+            for (i = 0; i < this._collection.length; i++) {
+                if (this._collection[i].getToolName = toolName) {
+                    this._collection.splice(i, 1);
+                }
+            }
+        }
+
+        displayTool(index, div) {
+            console.log('WHY ISNT THISWORKING');
+            if (index => 0 && index < this._collection.length) {
+                this._collection[index].display();
+            }
+        }
+        displayToolInv(index) {
+            if (index >= 0 && index < this._collection.length) {
+                console.log(this._collection[index]);
+                this._collection[index].addToInventoryDisplay()
+
+
+            }
+        }
+
+        displayToolInvLatest() {
+            console.log("length is: " + this._collection.length)
+            if (this._collection.length > 0) {
+                if (this._collection.length == 1) {
+                    this.displayToolInv(0);
+                }
+                else {
+                    this.displayToolInv(this._collection.length - 1);
+                }
+            }
+        }
+
+
+        hideTool(index) {
+            if (index > 0 && index < this._collection.length) {
+                this._collection[index].hide();
+            }
+        }
+
+        toString() {
+            var str = 'test';
+            for (var i = 0; i < this._collection.length; i++) {
+                str += this._collection[i].toString();
+            }
+            return str;
+        }
+        getNumOfTools() {
+            return this._collection.length; //index starts at 0 index item starts at 1, cancels out.
+
+        }
+    }
+    tools = []
+    var toolInv = new toolBox("toolBox", tools);
+    //var encryptedNote = new encryptionNote('note','images/note.jpg',toolInv.getNumOfTools(),'temp');
+    var encryptedNote;
+
+    /* function testToolBox() {
+         var crowbar = new tool('Crowbar', 'images/crowbar.png',null);
+         var crowbar1 = new tool('Crowbar1', 'images/crowbar.png','item1');
+         var tools = [];
+         tools.push(crowbar, crowbar1);
+         console.log(tools); 
+         var allTools = new toolBox("toolBox", tools);
+         console.log(allTools.toString());
+         var crowbar3 = new tool('Crowbar3', 'images/crowbar.png','item2');
+         allTools.addTool(crowbar3);
+         allTools.displayTool(1);
+         allTools.displayToolInv(1);
+         allTools.hideTool(1);
+     
+ 
+     }
+    
+     addListeners(upclick, incrementASI);
+     addListeners(downclick, decrementASI);
+    // testToolBox();
+     /* Dylan */
+    addListeners(upclick, incrementASI);
+    addListeners(downclick, decrementASI);
+
+
+    /* Dylan */
+
+
+    const gameText = document.getElementById("description");
+    let flashlight_found = false;
+
+
+    function bombRoom() {
+        document.getElementById("bombroom").style.display = 'block';
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'none';
+        document.getElementById("bombkeypad").style.display = 'block';
+        document.getElementById("escapedoor").style.display = 'none';
+
+
+        gameText.innerText = "Agent " + playerName + ", this is headquarters. You have been captured by the enemy. They've planted a bomb in the room that is counting down from 5 minutes. Your mission is to disarm the bomb to save any civilians in the building, however if you cannot disarm it you must find a way to escape before it explodes. Stay alert agent " + playerName + " and good luck.";
+
+        if (flashlight_found == false) {
+            document.getElementById("flashlight").style.display = 'block';
+        }
+
+        if (encryptedNote_found == false) {
+            document.getElementById("encryptedNote").style.display = 'block';
+        }
+
+    }
+
+    function lift() {
+        document.getElementById("bombroom").style.display = 'none';
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'none';
+        document.getElementById("lift").style.display = 'block';
+        document.getElementById("backtobomb").style.display = 'block';
+        document.getElementById("one").style.display = 'block';
+        document.getElementById("two").style.display = 'block';
+        document.getElementById("three").style.display = 'block';
+        document.getElementById("saferoom").style.display = 'none';
+        document.getElementById("crookroom").style.display = 'none';
+        document.getElementById("darkroom").style.display = 'none';
+        document.getElementById("safecode").style.display = 'none';
+        document.getElementById("blueprint").style.display = 'none';
+        document.getElementById("crowbar").style.display = 'none';
+        document.getElementById("key").style.display = 'none';
+        document.getElementById("enemy").style.display = 'none';
+        document.getElementById("wirecutters").style.display = 'none';
+        document.getElementById("bombkeypad").style.display = 'none';
+        document.getElementById("escapedoor").style.display = 'block';
+        document.getElementById("safedoor").style.display = 'none';
+        document.getElementById("flashlight").style.display = 'none';
+        document.getElementById("blackLayer").style.display = 'none';
+        document.getElementById("flashlightLayer").style.display = 'none';
+        document.getElementById("flashlightButton").style.display = 'none';
+        document.getElementById("encryptedNote").style.display = 'none';
+        gameText.innerText = "You hurry to the lift. Which floor do you go to?";
+
+
+    }
+
+    safecode_found = false;
+    blueprint_found = false;
+
+    function firstFloor() {
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'none';
+        document.getElementById("saferoom").style.display = 'block';
+        document.getElementById("escapedoor").style.display = 'none';
+        document.getElementById("safedoor").style.display = 'block';
+
+        gameText.innerText = "You step into a room with bright metallic hanging lights and tall arched windows. The floor is made of polished concrete, there's a safe in the corner of the room and a blueprint on the floor. What will you do?";
+
+        if (blueprint_found == true) {
+            document.getElementById("blueprint").style.display = 'none';
+        }
+        if (blueprint_found == false) {
+            document.getElementById("blueprint").style.display = 'block';
+        }
+
+    }
+
+    crowbar_found = false;
+    key_found = false;
+    isEnemyDefeated = false;
+    var encryptedNote_found = false;
+
+
+    function secondFloor() {
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'none';
+        document.getElementById("crookroom").style.display = 'block';
+        document.getElementById("escapedoor").style.display = 'none';
+
+
+        gameText.innerText = "You step into the buildings sleek white lobby. There is an enemy armed with a crowbar. He's looking to fight you, Agent " + playerName + ". Don't worry, you have a small healing factor to help you!";
+        console.log("Enemy defeated :" + isEnemyDefeated);
+        if (isEnemyDefeated == false) {
+            document.getElementById("enemy").style.display = 'block';
+
+        }
+        if (key_found == false && isEnemyDefeated == true) {
+            document.getElementById("key").style.display = 'block';
+        }
+        if (crowbar_found == false && isEnemyDefeated == true) {
+            document.getElementById("crowbar").style.display = 'block';
+        }
+
+    }
+
+    wirecutters_found = false;
+
+    function thirdFloor() {
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'none';
+        document.getElementById("darkroom").style.display = 'block';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("escapedoor").style.display = 'none';
+        document.getElementById("blackLayer").style.display = 'block';
+        document.getElementById("flashlightLayer").style.display = 'block';
+        document.getElementById("flashlightButton").style.display = 'block';
+
+        if (flashlight_found == false) {
+            gameText.innerText = "You step into a pitch black room. Going in blind is too risky.It'd be better to find a light source before searching this room.";
+        }
+
+        if (flashlight_found == true) {
+            gameText.innerText = "You step into a pitch black room. Turning on your flashlight you search the room.";
+        }
+
+        if (wirecutters_found == false && flashlight_found == true) {
+            document.getElementById("wirecutters").style.display = 'block';
+        }
+
+
+
+    }
+
+    function toggleFlashlight() {
+        var button = document.getElementById('flashlightStatus');
+        var flashlightLayer = document.getElementById('flashlightLayer');
+
+        if (flashlight_found == true) {
+            if (button.innerHTML == ' On')
+                button.innerHTML = ' Off';
+            else
+                button.innerHTML = ' On';
+            blackLayer.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            flashlightLayer.classList.toggle('flashlightEffect');
+            playToggleAudio();
+            removeLayer();
+            mouseFlashlightEffect();
+        }
+    }
+
+    function removeLayer() {
+        var layer = document.getElementById('blackLayer');
+        var button = document.getElementById('flashlightStatus');
+
+        if (button.innerHTML == ' On')
+            layer.style.backgroundColor = 'transparent';
+        else if (button.innerHTML == ' Off')
+            layer.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+    }
+
+    function playToggleAudio() {
+        var audio = new Audio('audio/flashlightToggle.mp3');
+        audio.play();
+    }
+
+    function mouseFlashlightEffect() {
+        var imgContainer = document.getElementsByClassName('button-centre')[0];
+        var flashlightLayer = document.getElementById('flashlightLayer');
+        var flashlightWidth = flashlightLayer.offsetWidth;
+        var flashlightHeight = flashlightLayer.offsetHeight;
+
+        imgContainer.addEventListener('mousemove', function (e) {
+            var mouseX = e.clientX - imgContainer.getBoundingClientRect().left;
+            var mouseY = e.clientY - imgContainer.getBoundingClientRect().top;
+
+            var centerX = mouseX - (flashlightWidth / 2);
+            var centerY = mouseY - (flashlightHeight / 2);
+
+            flashlightLayer.style.left = centerX + 'px';
+            flashlightLayer.style.top = centerY + 'px';
+        }
+        );
+    }
+    function flashlightFound() {
+        flashlight_found = true;
+        document.getElementById("flashlight").style.display = 'none';
+        gameText.innerText = "You pick up the flashlight.";
+        var flashlight = new tool('flashlight', "images/flashlight.png", toolInv.getNumOfTools());
+        toolInv.addTool(flashlight);
+        toolInv.displayToolInvLatest();
+    }
+    function blueprintFound() {
+        gameText.innerText = "You pick up the blueprint.";
+        blueprint_found = true;
+        document.getElementById("blueprint").style.display = 'none';
+        var blueprint = new tool('blueprint', "images/blueprint.jpg", toolInv.getNumOfTools());
+        toolInv.addTool(blueprint);
+        return true;
+    }
+    function safecodeFound() {
+        safecode_found = true;
+        document.getElementById("safecode").style.display = 'none';
+        gameText.innerText = "You pick up the note.";
+        var safeCode = new tool('safeCode', "images/barcode.jpg", toolInv.getNumOfTools());
+        toolInv.addTool(safeCode);
+
+    }
+
+    function keyFound() {
+        key_found = true;
+        document.getElementById("key").style.display = 'none';
+        gameText.innerText = "You pick up the safe key.";
+        var key = new tool('key', "images/key.png", toolInv.getNumOfTools());
+        toolInv.addTool(key);
+    }
+
+
+
+    // enemy and player damage
+
+    let playerMaxHP = 100;
+    let enemyMaxHP = 100;
+    let enemyHP = enemyMaxHP;
+    let playerHP = playerMaxHP;
+
+    const enemyHealthBar = document.querySelector('#enemyHealthBar');
+    const enemyHealth = document.querySelector('#enemyHealth');
+    const playerHealthBar = document.querySelector('#playerHealthBar');
+    const playerHealth = document.querySelector('#playerHealth');
+    const burglar = document.querySelector('#burglar');
+
+    let enemyCritChance = 30;
+    let playerCritChance = 30;
+    let playerCritDmg = 10;
+
+    function updatePlayerHealthBar() {
+        const playerHealthPercentage = (playerHP / playerMaxHP) * 100;
+        playerHealth.style.width = `${playerHealthPercentage}%`;
+        sessionStorage.setItem('playerHP',playerHP);
+    }
+
+    function decreaseEnemyHealth() {
+        const url = `http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/characterDamage.php?minDmg=0&maxDmg=5&critChance=${enemyCritChance}&critDmg=10`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const amount = parseInt(data.dmgResult);
+                const isCrit = data.crit;
+                const str = strScore.getScore();
+                const strBonus = (str / 2);
+                enemyCritChance = enemyCritChance + strBonus;
+                if (enemyCritChance > 100) {
+                    enemyCritChance = 100;
+                }
+
+
+                if (!isEnemyDefeated && enemyHP > 0) {
+                    enemyHP -= amount;
+                    if (enemyHP < 0) {
+                        enemyHP = 0;
+                    }
+                    enemyHealth.style.width = `${(enemyHP / enemyMaxHP) * 100}%`;
+                    updateEnemyHP();
+
+                    if (enemyHP === 0) {
+                        enemyHealthBar.style.display = 'none';
+                        enemyHealth.style.display = 'none';
+                        burglar.style.display = 'none';
+                        isEnemyDefeated = true;
+                        document.getElementById("enemy").style.display = 'none';
+                        if (key_found == false && isEnemyDefeated == true) {
+                            document.getElementById("key").style.display = 'block';
+                            document.getElementById("enemy").style.display = 'none';
+                        }
+                        if (crowbar_found == false && isEnemyDefeated == true) {
+                            document.getElementById("crowbar").style.display = 'block';
+                        }
+                    }
+                }
+                console.log(`Inflicted ${amount} damage to the enemy${isCrit ? ' (critical hit)' : ''}.`);
+                if (isEnemyDefeated) {
+                    gameText.innerText = "Well done! You defeated the enemy.";
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function decreasePlayerHealth() {
+        const url = `http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/characterDamage.php?minDmg=0&maxDmg=5&critChance=${playerCritChance}&critDmg=${playerCritDmg}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const amount = parseInt(data.dmgResult);
+                const isCrit = data.crit;
+
+                const con = conScore.getScore();
+                const conBonusForChance = (con / 4);
+                const conBonusForDmg = (con / 5);
+                playerCritChance = playerCritChance - conBonusForChance;
+                playerCritDmg = playerCritDmg - conBonusForDmg;
+
+                if (playerCritChance < 0) {
+                    playerCritChance = 0;
+                }
+                if (playerCritDmg < 5) {
+                    playerCritDmg = 5;
+                }
+
+
+                if (playerHP > 0) {
+                    playerHP -= amount;
+                    if (playerHP < 0) {
+                        playerHP = 0;
+                    }
+                    updatePlayerHealthBar();
+                    updatePlayerHP();
+
+                    if (playerHP === 0) {
+                        sessionStorage.setItem('endType','death');
+                        endGame();
+                        /*
+                        document.getElementById("zeroHealthEnding").style.display = 'block';
+                        document.getElementById("inscription").style.display = 'block';
+                        // document.getElementById("playerFullName").style.display = 'block';
+                        // document.getElementById("playerBirthDeathYear").style.display = 'block';
+                        document.getElementById("playerHealthWrapper").style.display = 'none';
+                        document.getElementById("crookroom").style.display = 'none';
+                        document.getElementById("restart").style.display = 'block';
+                        document.getElementById("liftbutton").style.display = 'none';
+                        document.getElementById("key").style.display = 'none';
+                        document.getElementById("crowbar").style.display = 'none';
+                        document.getElementById("enemy").style.display = 'none'; */
+
+                        playDeathTollAudio();
+                        stopAudio();
+
+                        document.getElementById("playerFullName").innerText = playerName;
+                        document.getElementById("playerBirthDeathYear").innerText = playerBirthDeathYear;
+                    }
+                }
+                console.log(`Inflicted ${amount} damage to the player${isCrit ? ' (critical hit)' : ''}.`);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function updatePlayerHP() {
+        document.getElementById("playerHP").innerHTML = playerHP;
+    }
+
+    function updateEnemyHP() {
+        document.getElementById("enemyHP").innerHTML = enemyHP;
+    }
+
+
+    function playDeathTollAudio() {
+        var audio = new Audio('audio/deathToll.mp3');
+        audio.play();
+    }
+
+    function playAttackAudio() {
+        var audio = new Audio('audio/attack.mp3');
+        audio.play();
+    };
+
+    function attack() {
+        decreasePlayerHealth();
+        decreaseEnemyHealth();
+        playAttackAudio();
+    };
+
+
+
+    // function attack(){
+    //     strength = 9;
+    //     if (strength >=8){
+    //         enemy_down = true;
+    //         document.getElementById("enemy").style.display = 'none';
+    //         if (key_found == false && enemy_down == true){            
+    //             document.getElementById("key").style.display = 'block';  
+    //         }                                                            
+    //         if (crowbar_found == false && enemy_down == true){
+    //             document.getElementById("crowbar").style.display = 'block';
+    //         }
+
+    //     }
+    //     if(enemy_down == true){
+    //         gameText.innerText = "Well done! You defeated the enemy.";
+    //     }
+    // }
+
+
+
+    ////////////////////////////////
+
+
+    function crowbarFound() {
+        gameText.innerText = "You pick up the crowbar.";
+        crowbar_found = true;
+        document.getElementById("crowbar").style.display = 'none';
+        var crowbar = new tool('crowbar', "images/crowbar.png", toolInv.getNumOfTools());
+        toolInv.addTool(crowbar);
+    }
+
+    function wirecuttersFound() {
+        gameText.innerText = "You pick up the wire cutters.";
+        wirecutters_found = true;
+        document.getElementById("wirecutters").style.display = 'none';
+        var wirecutters = new tool('wirecutters', "images/pliars.png", toolInv.getNumOfTools());
+        toolInv.addTool(wirecutters);
+        return true;
+    }
+
+    function encryptedNoteFound() {
+        gameText.innerText = "You pick up a mysterious note, perhaps there is a clue to decipher it";
+        encryptedNote_found = true;
+        document.getElementById("encryptedNote").style.display = 'none';
+        makeMessage("The super secret code to disarm the bomb is : ");
+        return true;
+
+    }
+
+    function openKeyPad() {
+        document.getElementById("keyWrapper").style.display = 'grid';
+        document.getElementById("closepad").style.display = 'block';
+        document.getElementById("liftbutton").style.display = 'none';
+        document.getElementById("cutwire").style.display = 'block';
+
+        if (wirecutters_found == false && safecode_found == false && blueprint_found == false) {
+            gameText.innerText = "The bomb looks incredibly high-tech! You'll need to find the code or some tools to disarm it.";
+        }
+
+
+    }
+    function closeKeyPad() {
+        document.getElementById("keyWrapper").style.display = 'none';
+        document.getElementById("closepad").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'block';
+        document.getElementById("cutwire").style.display = 'none';
+
+    }
+
+    function cutwire() {
+
+        if (wirecutters_found == false && blueprint_found == false) {
+            gameText.innerText = "You'll need to find the code or some tools to disarm the bomb.";
+        }
+        if ((wirecutters_found == true) && (blueprint_found == true)) {
+            gameText.innerText = "Reading the blueprint correctly, you safely cut the wire. Mission accomplished! You leave the building after safely disarming the bomb.";
+            sessionStorage.setItem('endType','wirecut');
+            setInterval(endGame,3000);
+          /*  document.getElementById("GoodEnding").style.display = 'block';
+            document.getElementById("restart").style.display = 'block';
+            document.getElementById("liftbutton").style.display = 'none';
+            document.getElementById("bombroom").style.display = 'none';
+            document.getElementById("bombkeypad").style.display = 'none';
+            document.getElementById("cutwire").style.display = 'none';
+            document.getElementById("keyWrapper").style.display = 'none';
+            document.getElementById("closepad").style.display = 'none'; */
+        }
+        if (wirecutters_found == true && blueprint_found == false) {
+            gameText.innerText = "Woah! You can't go cutting like a madman! You need to figure out which wires need to be cut before using the wire cutters.";
+        }
+        if (blueprint_found == true && wirecutters_found == false) {
+            gameText.innerText = "According to the blueprint, there's a red wire that can be cut to stop the timer! But you'll need something to cut it...";
+        }
+    }
+
+    function restart() {
+        window.location.reload();
+    }
+
+
+    function escape() {
+        if (crowbar_found == true) {
+            const str = strScore.getScore();
+            const strBonus = (str - 10) / 2;
+            console.log(strBonus);
+            rollDice(20, strBonus, 12);
+        }
+        if (crowbar_found == false && key_found == true) {
+            gameText.innerText = "You try the key on the door's lock but it does'nt fit. You'll need to find something else to open the door";
+        }
+        if (crowbar_found == false) {
+            gameText.innerText = "The door is locked and looks too sturdy to break through. You'll need to find something to get it open.";
+        }
+    }
+
+    safeOpened = false;
+    function opensafe() {
+        if (key_found == true && decrypter_Found == false) {
+            document.getElementById("decrypter").style.display = 'block';
+            gameText.innerText = "You open the safe and see a note with what you assume is the bombs deactivation code written on it.";
+        }
+        if (key_found == false) {
+            gameText.innerText = "You need to find the safe key to open the safe.";
+        }
+        if (key_found == true && decrypter_Found == true) {
+            document.getElementById("decrypter").style.display = 'none';
+            gameText.innerText = "You open the safe. There is nothing inside";
+        }
+
+
+
+    }
+
+    /* timer functionality  */
+
+    function startTimer(divId, duration) {
+        var startTime = new Date().getTime();
+        var element = document.getElementById(divId);
+        sessionStorage.setItem('startTime', startTime);
+        changeColour(element, duration);
+        startCountdown();
+    }
+
+    function endGame(){
+        gameFinished = true;
+        var toolTotal = toolInv.getNumOfTools().toString();
+        console.log("Tool toal is : "+toolTotal);
+        sessionStorage.setItem('numOfTools',toolTotal);
+        setTimeout(loadNew,1000);
+        
+    }
+    function loadNew(){
+        window.location.href = "ending.html";
+    }
+
+    function changeColour(element, duration) {
+        var currentTime = new Date().getTime() - sessionStorage.getItem('startTime');
+        var progress = currentTime / duration;
+        var colour = `rgb(${255 * progress}, 0, 0)`;
+        element.style.borderColor = colour;
+        if (currentTime < duration) {
+            setTimeout(function () { changeColour(element, duration) }, 16);
+        }
+        else {
+            sessionStorage.setItem('endType',"timeout");
+            endGame();
+           // return sessionStorage.setItem("timesUp", true);
+        }
+    }
+
+    sessionStorage.setItem("timesUp", false);
+    var interval = setInterval(function () {
+        console.log(sessionStorage.getItem("timesUp"))
+        if (sessionStorage.getItem("timesUp") === "true")/*session returns a string rather than boolean this error was painfull */ {
+            console.log("boom times up! ");
+            timeOutEnding();
+            clearInterval(interval);
+        }
+    }, 10)
+
+    function timeOutEnding() {
+        turnAllImagesOff();
+        document.getElementById("timeOutEnding").style.display = 'block';
+        document.getElementById("restart").style.display = 'block';
+    }
+
+    function startCountdown() {
+        var timer = document.getElementById('clock');
+        var startButton = document.getElementById('startButton');
+        var timeLeft = 300; // 5 minutes in seconds
+
+        var countdownInterval = setInterval(function() {
+            if(!gameFinished){
+            // Calculate minutes and seconds
+            var minutes = Math.floor(timeLeft / 60);
+            var seconds = timeLeft % 60;
+
+            // Display the updated time on the timer element
+            timer.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+            // Check if the countdown has reached zero
+            if (timeLeft === 0) {
+                clearInterval(countdownInterval);
+                timer.textContent = '00:00';
+                alert('Time is up!');
+                startButton.disabled = false; // Enable the start button
+            } else {
+                timeLeft--; // Decrement the time left
+            }
+        }
+        else{
+            console.log(timeLeft);
+            sessionStorage.setItem('remainingTime',timeLeft);
+        }
+        }, 1000); // Update the timer every 1000 milliseconds (1 second)
+    }
+
+
+    /* KeyPad Functionality */
+    function createButtons() {
+        const elements = document.getElementsByClassName('keyPadNum');
+        addButtonEventListeners(elements);
+    }
+
+    function addButtonEventListeners(elements) {
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            element.addEventListener('click', function () { handleClick(element); });
+        }
+    } //Note this is similar to the other one I developed for the main file, but i didnt have access to it when i was writing this script, and as such recreated it, when putting in main  I will use the original function.
+
+
+    var Screen = document.getElementById('Screen');
+    var clicks = " ";
+    var content = " ";
+
+    function subPad() {  // use this to get all values;
+        content = clicks;
+        clicks = "";
+        Screen.innerHTML = "";
+        checkmatch(content);
+
+
+    }
+
+    document.getElementById('submitPad').addEventListener('click', subPad);
+
+    /*
+    document.getElementById('Enter').addEventListener('click', enterButton);
+    function enterButton() {
+      //clicks.push("e")
+      displayPad();
+    } */
+
+
+    function displayPad() {
+        Screen.innerHTML = clicks;
+    }
+
+
+    createButtons();
+
+    //new code
+
+    let count = 0;
+    let time;
+
+    function handleClick(element) {
+        clearTimeout(time);
+        count++;
+        time = setTimeout(() => {
+            console.log(`Clicked ${count} times`);
+            var clickVal;
+            var val = element.innerHTML.substring(0, 1); //button number
+
+            if (val === "7" || val == "9") {
+                clickVal = count % 6
+            }
+            else {
+                clickVal = count % 5
+            }
+
+
+            console.log("clickVal is: ", clickVal);
+            console.log("test input: " + element.innerHTML.substring(0, 1));
+            toFormat(val, clickVal, count);
+            count = 0;
+        }, 2000);
+    }
+    function toFormat(val, numOfClicks, count) {
+        var value = val;
+        if (numOfClicks == 0) {
+            console.log("testsc");
+            numOfClicks = parseInt(val);
+        }
+        for (var i = 1; i < numOfClicks; i++) {
+            value += val;
+        }
+        process(value)
+
+    }
+    function numberToString(num) {
+        const url = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/numbersToStringAPI.php";
+        var qStr = "?numbers=" + num;
+        fetch(url + qStr)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+                return response.json()
+            })
+
+            .then(function (data) {
+                if (data.err) {
+                    //resultDiv.innerHTML = '<p>Error: ' + data.errMsg + '</p>';
+                    console.log(data.errMsg)
+                }
+
+                else {
+                    clicks += data.hiddenMessage;
+                    displayPad();
+                    console.log(clicks);
+                }
+            })
+            .catch(function (error) {
+                ;
+            });
+    }
+
+
+    function process(value) {
+        if (value.length > 1) {
+            subVal = value.substring(1);
+            console.log(subVal);
+            if (value.includes("1")) {
+                subVal = ""; //as one isnt used for API
+
+            }
+
+            if (value.includes("0")) {
+                subVal = " "; //as 0 is space  for API
+
+            }
+            numberToString(subVal);
+        }
+        else {
+            clicks += value;
+            displayPad();
+        }
+    }
+    function checkmatch(content){
+        if(content === sessionStorage.getItem('Code')){
+            sessionStorage.setItem('endType','Code');
+            endGame();
+        }
+
+    }
+
+    /* End of Keypad Functionality */
+    /* Encryption Sart */
+    function codeToString(code) {
+        var result = "";
+        for (var i = 0; i < code.length; i += 2) {
+            var numgroup = code.substr(i, 2);
+            var numVal = parseInt(numgroup);
+            var letterVal = String.fromCharCode(65 + (numVal % 26));
+            result += letterVal;
+        }
+        return result;
+    }
+
+    function getRandomCode(codeLength) {
+        const url = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/randomCode.php";
+        var qStr = "?length=" + codeLength;
+        return fetch(url + qStr)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok.");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.err) {
+                    console.log(data.errMsg);
+                    throw new Error(data.errMsg);
+                } else {
+                    return data.secretCode;
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+                throw error;
+            });
+    }
+
+    function Caesar(message, shift, type) {
+        const url = 'http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/encryption.php';
+        var qStr = `?type=${type}&key=${shift}&string=${message}`;
+        console.log(url + qStr);
+        return fetch(url + qStr)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok.");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.err) {
+                    console.log(data.errMsg);
+                    throw new Error(data.errMsg);
+                } else {
+                    return data.returnString;
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+                throw error;
+            });
+    }
+
+
+
+
+
+
+    /* getRandomCode(1).then(function(code){
+         sessionStorage.setItem('Shift',code);
+         if(sessionStorage.getItem('Shift') === '0'){
+           console.log('test');
+           sessionStorage.setItem('Shift',1)
+         }
+     }) */
+
+    //originally called it twice, but then it ended up sometimes not calling in time resulting in an incosistent encryption
+    function makeMessage(premessage) {
+        encryptedNote = new encryptionNote('note', 'images/note.jpg', toolInv.getNumOfTools(), 'temp');
+        getRandomCode(13).then(function (code) {
+
+            var codeVal = codeToString(code.substr(0, 12));
+            var shift = code.substr(12, 13);
+            if (shift === '0') {
+                shift = '1';
+            }
+            sessionStorage.setItem('Shift', shift);
+            sessionStorage.setItem('Code', codeVal);
+            /* const messageVal = document.getElementById('theMessage');
+             messageVal.innerHTML += ' ' +  codeVal;
+             var message = document.getElementById('theMessage').innerHTML; */
+            Caesar(premessage + codeVal, sessionStorage.getItem('Shift'), type = "encrypt").then(function (message) {
+                console.log("Message is: " + message);
+                sessionStorage.setItem('message', message);
+                console.log("next div is: " + toolInv.getNumOfTools());
+                encryptedNote.setMessageContents(message);
+                toolInv.addTool(encryptedNote);
+                toolInv.displayToolInvLatest();
+                console.log("1.Shift is: " + sessionStorage.getItem('Shift'));
+
+            })
+
+            console.log(sessionStorage.getItem('Code'));
+        });
+
+    }
+
+    function decrypterFound() {
+        console.log("Decrypter found isL " + decrypter_Found);
+        if (decrypter_Found == false) {
+            document.getElementById('decrypter').style.display = 'none';
+            gameText.innerText = "You find an item that seems to indicate how to decrypt a message, perhaps you should try use it on paper you find.";
+            console.log("DecrypterFound triggered");
+            var decrypter = new tool('decrypter', "images/decrypter.jpg", toolInv.getNumOfTools());
+            toolInv.addTool(decrypter);
+            toolInv.displayToolInvLatest();
+            decrypter_Found = true;
+        }
+        if (encryptedNote_found) {
+            cipherText = encryptedNote.getMessage();
+            console.log("CipherTExt is: " + cipherText);
+            console.log("Shift is: " + sessionStorage.getItem('Shift'));
+            Caesar(cipherText, sessionStorage.getItem('Shift'), 'decrypt').then(function (message) {
+                encryptedNote.decrypterFoundUpdate(message);
+            })
+        } else {
+            setTimeout(function () {
+                // Code to run after the pause
+                console.log("sleeping");
+                decrypterFound();
+            }, 3000); //will keep checking until it is found
+        }
+    }
+    //give it time to check before it works
+
+
+    /* Encryption End */
+
+
+    let itemCount = 0; // keep track of number of items added
+
+    function addItem(img) {
+        // Check if image element is fully loaded
+        if (!img.complete || img.naturalWidth === 0) {
+            img.addEventListener('load', function () {
+                setTimeout(function () {
+                    addItem(img);
+                }, 100);
+            });
+            return;
+        }
+
+        // Check if DOM is fully loaded
+        if (document.readyState !== 'complete') {
+            document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(function () {
+                    addItem(img);
+                }, 100);
+            });
+            return;
+        }
+
+        // create new item div
+        const newItem = document.createElement('div');
+        newItem.classList.add('item');
+
+        // add img to item div
+        const newImg = document.createElement('img');
+        newImg.setAttribute('src', img.src);
+        newItem.appendChild(newImg);
+        console.log(img.src);
+
+        // get next item div to add new item to
+        const itemDivs = document.querySelectorAll('.item');
+        let nextItem = null;
+        for (let i = 0; i < itemDivs.length; i++) {
+            if (itemDivs[i].childElementCount === 0) {
+                nextItem = itemDivs[i];
+                break;
+            }
+        }
+
+        // add new item to next item div
+        if (nextItem) {
+            nextItem.appendChild(newItem);
+        } else {
+            console.log('No more empty item divs');
+        }
+    }
+
+
+    function clickAbleInventory() {
+        console.log("testsasa")
+        const inventoryitems = document.getElementsByClassName("items-container")[0].children;
+        console.log(inventoryitems);
+        addListeners(inventoryitems, displayImage)
+
+
+    }
+    clickAbleInventory();
+
+
+    function displayImage(i) {
+        toolInv.displayTool(i);
+    }
+    var toolDisplay = document.getElementById('toolDisplay');
+    toolDisplay.addEventListener('click', function () { hideImage(toolDisplay) });
+    function hideImage(element) {
+        element.innerHTML = "";
+    }
+
+
+
+    function turnAllImagesOff() {
+        document.getElementById("bombroom").style.display = 'none';
+        document.getElementById("saferoom").style.display = 'none';
+        document.getElementById("crookroom").style.display = 'none';
+        document.getElementById("darkroom").style.display = 'none';
+        document.getElementById("lift").style.display = 'none';
+        document.getElementById("backtobomb").style.display = 'none';
+        document.getElementById("one").style.display = 'none';
+        document.getElementById("two").style.display = 'none';
+        document.getElementById("three").style.display = 'none';
+        document.getElementById("escapedoor").style.display = 'none';
+        document.getElementById("crowbarimage").style.display = 'none';
+        document.getElementById("safecodeimage").style.display = 'none';
+        document.getElementById("flashlightimage").style.display = 'none';
+        document.getElementById("blueprintimage").style.display = 'none';
+        document.getElementById("keyimage").style.display = 'none';
+        document.getElementById("liftbutton").style.display = 'none';
+        document.getElementById("closepad").style.display = 'none';
+        document.getElementById("wirecuttersimage").style.display = 'none';
+        document.getElementById("cutwire").style.display = 'none';
+        document.getElementById("escapedoorimage").style.display = 'none';
+        document.getElementById("safedoor").style.display = 'none';
+        document.getElementById("bombkeypadimage").style.display = 'none';
+    }
+    function rollDice(diceFaceNo, Bonus, NumToHit) {
+        let url = 'http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/diceRollWithInputs.php';
+        let qStr = '?diceFaceNumber=' + diceFaceNo + '&diceNumber=1';
+        console.log(url + qStr);
+
+        fetch(url + qStr)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.err) {
+                    console.log('Error: ' + data.errMsg);
+                }
+                else {
+                    let finalResult = data["0"].result + Bonus;
+                    console.log(finalResult);
+                    if (finalResult >= NumToHit) {
+                        console.log('The result of the roll is ' + finalResult + ', this is a success');
+                      /*  document.getElementById("lift").style.display = 'none';
+                        document.getElementById("backtobomb").style.display = 'none';
+                        document.getElementById("one").style.display = 'none';
+                        document.getElementById("two").style.display = 'none';
+                        document.getElementById("three").style.display = 'none';
+                        document.getElementById("escapedoor").style.display = 'none';
+                        document.getElementById("escapeEnding").style.display = 'block';
+                        document.getElementById("restart").style.display = 'block'; */
+                        gameText.innerText = "It takes a few swings but you manage to break open the lock on the door. You run through the door and out of the building, leaving everyone in the skyscraper to the bombs wrath.";
+                        sessionStorage.setItem('endType','escape');
+                        endGame();
+                    }
+                    else if (finalResult < NumToHit) {
+                        console.log('The result of the roll is ' + finalResult + ', this is a failure');
+                        gameText.innerText = "You try your best but... the door is too tough! Maybe if you try again...";
+                    }
+                };
+            })
+            .catch(function (error) {
+                console.log('Error: ' + error.message);
+            });
+    }
+
+    function decreaseFontSize() {
+        var textElement = document.getElementById("description");
+        var currentSize = parseInt(window.getComputedStyle(textElement).fontSize);
+        if (currentSize > 16) { // minimum font size
+            textElement.style.fontSize = (currentSize - 2) + "px";
+        }
+    }
+
+    function increaseFontSize() {
+        var textElement = document.getElementById("description");
+        var currentSize = parseInt(window.getComputedStyle(textElement).fontSize);
+        if (currentSize < 40) { // maximum font size
+            textElement.style.fontSize = (currentSize + 2) + "px";
+        }
+    }
+
+    function countTotalClicks(element){
+        var elmclicks = parseInt(sessionStorage.getItem('totalClicks'));
+        elmclicks += 1;
+        sessionStorage.setItem('totalClicks',elmclicks);}
+  //  document.getElementById('body').addEventListener('click',countTotalClicks);
+
+
+</script>
+
+</html>
